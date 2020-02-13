@@ -5,10 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Flat.create!(
-  name: 'Light & Spacious Garden Flat London',
-  address: '10 Clifton Gardens London W9 1DT',
-  description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
-  price_per_night: 75,
-  number_of_guests: 3
-)
+puts "Destroying flats..."
+Flat.destroy_all if Rails.env.development?
+
+puts "Creating new flats..."
+
+4.times do
+  new_flat = Flat.new(
+    name: "#{Faker::Cannabis.cannabinoid}, #{Faker::Job.title}",
+    address: Faker::Address.full_address,
+    description: "#{Faker::ChuckNorris.fact}, #{Faker::Lorem.paragraph_by_chars(number: 2000)}",
+    price_per_night: (10..120).to_a.sample.to_i,
+    number_of_guests: (1..10).to_a.sample.to_i
+  )
+  new_flat.save!
+  puts "Created #{new_flat.name} for #{new_flat.number_of_guests} guests with a price per night of #{new_flat.price_per_night}"
+end
+
+puts "Flats all created"

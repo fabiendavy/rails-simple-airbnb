@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-6 form-container mt-4 p-4">
+
+      <h1>Add a new flat</h1>
+
+      <%= simple_form_for(@flat) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :picture_url %>
+        <%= f.input :description, input_html: { style: "height: 100px" }%>
+        <%= f.input :number_of_guests %>
+        <%= f.input :price_per_night %>
+        <%= f.submit class: "btn btn-primary" %>
+        <%= f.submit "Cancel", class: "btn btn-danger" %>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+

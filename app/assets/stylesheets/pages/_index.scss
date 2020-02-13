@@ -1,0 +1,41 @@
+// Import page-specific CSS files here.
+@import "home";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white!important;
+}
+
+.navbar {
+  background-color: #F8F9FA;
+}
+
+.flat-card {
+  height: 275px;
+  box-shadow: 0 0 10px grey;
+  border-radius: 4px;;
+}
+
+.flat-detail {
+  background-color: rgb(224, 224, 224);
+  padding: 8px;
+}
+
+.flat-option {
+  padding: 12px;
+}
+
+.form-container {
+  background-color: #F8F9FA;
+  width: 300px;
+  border-radius: 6px;
+}
+
+.flat-description-container {
+  background-color: #F8F9FA;
+
+}
